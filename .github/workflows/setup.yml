@@ -52,10 +52,12 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
       - name: Generate graphs
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: Graphs CI
-          token: ${{ secrets.GH_PAT || github.token }}
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GH_PAT || github.token }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/graphs.yml/dispatches \
+            -d '{"ref":"${{ github.ref }}"}'
       - name: Generate site
         uses: upptime/uptime-monitor@v1.40.1
         with:
