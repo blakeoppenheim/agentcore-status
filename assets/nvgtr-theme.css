@@ -1,0 +1,279 @@
+:root {
+  /* Light mode variables */
+  --body-background-color: #ffffff;
+  --body-text-color: #111111;
+  --card-background-color: #ffffff;
+  --nav-background-color: #ffffff;
+  --nav-border-bottom-color: #dddddd;
+  --card-border-color: rgba(0, 0, 0, 0.1);
+  --down-border-left-color: #f87171;
+  --down-background-color: #fee2e2;
+  --up-border-left-color: #34d399;
+  --up-background-color: #d1fae5;
+  --degraded-border-left-color: #fbbf24;
+  --degraded-background-color: #fef3c7;
+  --primary-color: #000000;
+  --secondary-color: #666666;
+  --graph-line-color: rgba(0, 0, 0, 0.15);
+  --graph-tooltip-background-color: rgba(0, 0, 0, 0.9);
+  --graph-tooltip-text-color: #ffffff;
+  --btn-background-color: #f8f8f8;
+  --btn-border-color: #dddddd;
+  --btn-text-color: #333333;
+  --btn-hover-background-color: #eeeeee;
+  --btn-hover-border-color: #cccccc;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  --body-background-color: #000000;
+  --body-text-color: #ffffff;
+  --card-background-color: #0A0A0A;
+  --nav-background-color: #0A0A0A;
+  --nav-border-bottom-color: #222222;
+  --card-border-color: #333333;
+  --down-border-left-color: #ef4444;
+  --down-background-color: rgba(220, 38, 38, 0.1);
+  --up-border-left-color: #10b981;
+  --up-background-color: rgba(16, 185, 129, 0.1);
+  --degraded-border-left-color: #f59e0b;
+  --degraded-background-color: rgba(245, 158, 11, 0.1);
+  --primary-color: #ffffff;
+  --secondary-color: #9ca3af;
+  --graph-line-color: rgba(255, 255, 255, 0.15);
+  --graph-tooltip-background-color: rgba(255, 255, 255, 0.9);
+  --graph-tooltip-text-color: #000000;
+  --btn-background-color: #0A0A0A;
+  --btn-border-color: #333333;
+  --btn-text-color: #ffffff;
+  --btn-hover-background-color: #111111;
+  --btn-hover-border-color: #444444;
+}
+
+/* General element styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  transition: background-color 0.2s ease;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation bar styling */
+nav {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--nav-border-bottom-color);
+  margin-bottom: 40px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo styles */
+.navbar-brand img {
+  height: 32px;
+  margin-right: 10px;
+}
+
+/* Status component styling */
+.live-status {
+  margin-bottom: 30px;
+}
+
+.status-card {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-border-color);
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.status-card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.status-card.is-up {
+  border-left: 4px solid var(--up-border-left-color);
+}
+
+.status-card.is-down {
+  border-left: 4px solid var(--down-border-left-color);
+}
+
+.status-card.is-degraded {
+  border-left: 4px solid var(--degraded-border-left-color);
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  margin-right: 10px;
+}
+
+.status-indicator.is-up {
+  background-color: var(--up-background-color);
+  color: var(--up-border-left-color);
+}
+
+.status-indicator.is-down {
+  background-color: var(--down-background-color);
+  color: var(--down-border-left-color);
+}
+
+.status-indicator.is-degraded {
+  background-color: var(--degraded-background-color);
+  color: var(--degraded-border-left-color);
+}
+
+/* Timeline and incident styling */
+.timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: var(--graph-line-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+/* Button styling */
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: var(--btn-background-color);
+  border: 1px solid var(--btn-border-color);
+  color: var(--btn-text-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--btn-hover-background-color);
+  border-color: var(--btn-hover-border-color);
+}
+
+.button.button-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .button.button-primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
+.button.button-primary:hover {
+  opacity: 0.9;
+}
+
+/* Graphs styling */
+.graph {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Footer styling */
+footer {
+  padding: 30px 0;
+  font-size: 14px;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+#theme-toggle:hover {
+  background-color: var(--btn-hover-background-color);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .status-card {
+    padding: 12px 16px;
+  }
+  
+  .navbar-brand img {
+    height: 24px;
+  }
+}
+
+/* Custom typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--body-text-color);
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* Dark/light mode transition */
+body, #app, .navbar, .status-card, .button {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+} 

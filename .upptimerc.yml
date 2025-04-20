@@ -10,17 +10,56 @@ sites:
     url: https://nvgtr.ai
 
 status-website:
+  # Custom domain
   cname: status.nvgtr.ai
+  
+  # Basic information
   name: NVGTR Status
+  logoUrl: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-logo.svg
+  favicon: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-icon.svg
+  faviconSvg: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-icon.svg
+  
+  # Theme configuration
+  theme: dark # Use dark theme by default (options: light, dark, night, ocean)
+  themeUrl: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-theme.css
+  
+  # Text content
   introTitle: "NVGTR System Status"
-  introMessage: "This page provides real-time status information for NVGTR services."
+  introMessage: "This page provides real-time status information for NVGTR services. You can view current status, response times, and incident history."
+  
+  # Navigation
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
     - title: NVGTR
       href: https://nvgtr.ai
+
+  # Custom scripts and styles
+  js: |
+    window.addEventListener('load', function() {
+      // Add a theme toggle button
+      const nav = document.querySelector('nav .container');
+      if (nav) {
+        const toggle = document.createElement('button');
+        toggle.id = 'theme-toggle';
+        toggle.innerHTML = '🌓';
+        toggle.setAttribute('aria-label', 'Toggle dark/light mode');
+        toggle.style.marginLeft = 'auto';
+        nav.appendChild(toggle);
+        
+        // Handle theme toggle
+        toggle.addEventListener('click', function() {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+        
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    });
 
 # Notifications
 notifications:
@@ -31,4 +70,40 @@ notifications:
 # For more information, see https://upptime.js.org/docs/notifications
 
 i18n:
-  footer: NVGTR System Status
+  footer: "Powered by NVGTR | © 2025 Navigator Holdings, LLC."
+  activeIncidents: "Active Incidents"
+  allSystemsOperational: "All Systems Operational"
+  incidentReport: "Incident Report #$NUMBER →"
+  activeIncidentSummary: "Opened at $DATE"
+  incidentTitle: "Incident $NUMBER Details"
+  incidentDetails: "Incident Details"
+  incidentFixed: "Fixed"
+  incidentOngoing: "Ongoing"
+  incidentOpenedAt: "Opened at"
+  incidentClosedAt: "Closed at"
+  incidentSubscribe: "Subscribe to Updates"
+  incidentViewOnGitHub: "View on GitHub"
+  incidentCommentSummary: "Updated at $DATE"
+  incidentBack: "← Back to all incidents"
+  pastIncidents: "Past Incidents"
+  pastIncidentsResolved: "Resolved in $DURATION"
+  liveStatus: "Live Status"
+  overallUptime: "Overall uptime: $UPTIME"
+  overallUptimeTitle: "Overall uptime"
+  averageResponseTime: "Average response time: $TIME"
+  averageResponseTimeTitle: "Average response"
+  sevelDayUptime: "7-day uptime"
+  responseTimeTitle: "Response time"
+  uptimeTitle: "Uptime"
+  dayTitle: "day"
+  daysTitle: "days"
+  hourTitle: "hour"
+  hoursTitle: "hours"
+  minuteTitle: "minute"
+  minutesTitle: "minutes"
+  secondTitle: "second"
+  secondsTitle: "seconds"
+  uptimeDay: "24-hour uptime"
+  uptimeWeek: "7-day uptime"
+  uptimeMonth: "30-day uptime"
+  uptimeYear: "1-year uptime"
