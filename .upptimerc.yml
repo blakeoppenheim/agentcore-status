@@ -20,7 +20,7 @@ status-website:
   faviconSvg: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-icon.svg
   
   # Theme configuration
-  theme: dark # Use dark theme by default (options: light, dark, night, ocean)
+  theme: dark # Set default theme for non-supporting browsers
   themeUrl: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-theme.css
   
   # Text content
@@ -37,7 +37,28 @@ status-website:
   # Custom scripts and styles
   js: |
     window.addEventListener('load', function() {
-      // Add a theme toggle button
+      // Function to detect system color scheme
+      function detectColorScheme() {
+        // Check for saved preference first
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          return savedTheme;
+        }
+        
+        // Otherwise, use system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        } else {
+          return 'light';
+        }
+      }
+      
+      // Function to apply theme
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+      
+      // Add a theme toggle button to the navbar
       const nav = document.querySelector('nav .container');
       if (nav) {
         const toggle = document.createElement('button');
@@ -47,17 +68,32 @@ status-website:
         toggle.style.marginLeft = 'auto';
         nav.appendChild(toggle);
         
-        // Handle theme toggle
+        // Handle toggle button click
         toggle.addEventListener('click', function() {
           const currentTheme = document.documentElement.getAttribute('data-theme');
           const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-          document.documentElement.setAttribute('data-theme', newTheme);
+          applyTheme(newTheme);
           localStorage.setItem('theme', newTheme);
         });
+      }
+      
+      // Listen for system theme changes
+      if (window.matchMedia) {
+        const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
         
-        // Initialize theme
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        // Set initial theme based on system/saved preference
+        applyTheme(detectColorScheme());
+        
+        // Add change listener for system theme changes
+        colorSchemeQuery.addEventListener('change', (e) => {
+          // Only apply system change if user hasn't manually set a preference
+          if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      } else {
+        // Fallback for browsers that don't support matchMedia
+        applyTheme('dark'); // Default to dark theme
       }
     });
 
