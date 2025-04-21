@@ -24,7 +24,7 @@ status-website:
   themeUrl: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-theme.css
   
   # Text content
-  introTitle: "NVGTR System Status"
+  introTitle: "NVGTR System Status Dashboard"
   introMessage: "This page provides real-time status information for NVGTR services. You can view current status, response times, and incident history."
   
   # Navigation
