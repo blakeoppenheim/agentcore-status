@@ -12,7 +12,7 @@
   --up-background-color: #d1fae5;
   --degraded-border-left-color: #fbbf24;
   --degraded-background-color: #fef3c7;
-  --primary-color: #000000;
+  --primary-color: #0A0A0A;
   --secondary-color: #666666;
   --graph-line-color: rgba(0, 0, 0, 0.15);
   --graph-tooltip-background-color: rgba(0, 0, 0, 0.9);
@@ -24,14 +24,14 @@
   --btn-hover-border-color: #cccccc;
 }
 
-/* Dark mode styles */
+/* Dark mode styles - exactly matching NVGTR brand colors */
 [data-theme="dark"] {
-  --body-background-color: #000000;
+  --body-background-color: #0A0A0A;
   --body-text-color: #ffffff;
   --card-background-color: #0A0A0A;
   --nav-background-color: #0A0A0A;
-  --nav-border-bottom-color: #222222;
-  --card-border-color: #333333;
+  --nav-border-bottom-color: #444444;
+  --card-border-color: #444444;
   --down-border-left-color: #ef4444;
   --down-background-color: rgba(220, 38, 38, 0.1);
   --up-border-left-color: #10b981;
@@ -39,15 +39,15 @@
   --degraded-border-left-color: #f59e0b;
   --degraded-background-color: rgba(245, 158, 11, 0.1);
   --primary-color: #ffffff;
-  --secondary-color: #9ca3af;
+  --secondary-color: #dddddd;
   --graph-line-color: rgba(255, 255, 255, 0.15);
   --graph-tooltip-background-color: rgba(255, 255, 255, 0.9);
-  --graph-tooltip-text-color: #000000;
+  --graph-tooltip-text-color: #0A0A0A;
   --btn-background-color: #0A0A0A;
-  --btn-border-color: #333333;
+  --btn-border-color: #444444;
   --btn-text-color: #ffffff;
   --btn-hover-background-color: #111111;
-  --btn-hover-border-color: #444444;
+  --btn-hover-border-color: #555555;
 }
 
 /* General element styles */
@@ -194,13 +194,13 @@ nav {
 .button.button-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  color: #ffffff;
+  color: #0A0A0A;
 }
 
 [data-theme="dark"] .button.button-primary {
   background-color: #ffffff;
   border-color: #ffffff;
-  color: #000000;
+  color: #0A0A0A;
 }
 
 .button.button-primary:hover {
@@ -276,4 +276,48 @@ p {
 /* Dark/light mode transition */
 body, #app, .navbar, .status-card, .button {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Additional NVGTR-specific dark mode overrides */
+[data-theme="dark"] {
+  --page-background-color: #0A0A0A;
+}
+
+[data-theme="dark"] body {
+  background-color: #0A0A0A;
+  color: #ffffff;
+}
+
+[data-theme="dark"] a {
+  color: #ffffff;
+}
+
+[data-theme="dark"] a:hover {
+  color: #dddddd;
+}
+
+[data-theme="dark"] .container-fluid {
+  background-color: #0A0A0A;
+}
+
+[data-theme="dark"] table {
+  border-color: #444444;
+}
+
+[data-theme="dark"] td,
+[data-theme="dark"] th {
+  border-color: #444444;
+}
+
+[data-theme="dark"] hr {
+  border-color: #444444;
+}
+
+/* Ensure any unhandled elements also have the proper dark mode styling */
+[data-theme="dark"] .badge,
+[data-theme="dark"] .card,
+[data-theme="dark"] .modal-content {
+  background-color: #0A0A0A;
+  border-color: #444444;
+  color: #ffffff;
 } 
