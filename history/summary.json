@@ -1,9 +1,9 @@
 [
   {
-    "name": "NVGTR AI",
-    "url": "https://app.nvgtr.ai",
-    "icon": "https://icons.duckduckgo.com/ip3/app.nvgtr.ai.ico",
-    "slug": "nvgtr-ai",
+    "name": "AgentCore AI",
+    "url": "https://app.agentcore.co",
+    "icon": "https://icons.duckduckgo.com/ip3/app.agentcore.co.ico",
+    "slug": "agentcore-co",
     "status": "up",
     "uptime": "99.95%",
     "uptimeDay": "100.00%",
@@ -20,10 +20,10 @@
     }
   },
   {
-    "name": "NVGTR API",
-    "url": "https://app.nvgtr.ai/api/health",
-    "icon": "https://icons.duckduckgo.com/ip3/app.nvgtr.ai.ico",
-    "slug": "nvgtr-api",
+    "name": "AgentCore API",
+    "url": "https://app.agentcore.co/api/health",
+    "icon": "https://icons.duckduckgo.com/ip3/app.agentcore.co.ico",
+    "slug": "agentcore-api",
     "status": "up",
     "uptime": "99.95%",
     "uptimeDay": "100.00%",
@@ -40,10 +40,10 @@
     }
   },
   {
-    "name": "NVGTR Website",
-    "url": "https://nvgtr.ai",
-    "icon": "https://icons.duckduckgo.com/ip3/nvgtr.ai.ico",
-    "slug": "nvgtr-website",
+    "name": "AgentCore Website",
+    "url": "https://agentcore.co",
+    "icon": "https://icons.duckduckgo.com/ip3/agentcore.co.ico",
+    "slug": "agentcore-website",
     "status": "down",
     "uptime": "14.35%",
     "uptimeDay": "0.00%",

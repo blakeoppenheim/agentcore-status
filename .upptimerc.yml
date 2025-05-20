@@ -1,38 +1,38 @@
 owner: blakeoppenheim # Your GitHub username
-repo: nvgtr-status # Your repository name
+repo: agentcore-status # Your repository name
 
 sites:
-  - name: NVGTR AI
-    url: https://app.nvgtr.ai
-  - name: NVGTR API
-    url: https://app.nvgtr.ai/api/health
-  - name: NVGTR Website
-    url: https://nvgtr.ai
+  - name: AgentCore AI
+    url: https://app.agentcore.co
+  - name: AgentCore API
+    url: https://app.agentcore.co/api/health
+  - name: AgentCore Website
+    url: https://agentcore.co
 
 status-website:
   # Custom domain
-  cname: status.nvgtr.ai
+  cname: status.agentcore.co
   
   # Basic information
-  name: NVGTR System Status
-  logoUrl: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-logo.svg
-  favicon: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-icon.svg
-  faviconSvg: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-icon.svg
+  name: AgentCore System Status
+  logoUrl: https://raw.githubusercontent.com/blakeoppenheim/agentcore-status/master/assets/agentcore-logo.svg
+  favicon: https://raw.githubusercontent.com/blakeoppenheim/agentcore-status/master/assets/agentcore-icon.svg
+  faviconSvg: https://raw.githubusercontent.com/blakeoppenheim/agentcore-status/master/assets/agentcore-icon.svg
   
   # Theme configuration
   theme: dark # Set default theme for non-supporting browsers
-  themeUrl: https://raw.githubusercontent.com/blakeoppenheim/nvgtr-status/master/assets/nvgtr-theme.css
+  themeUrl: https://raw.githubusercontent.com/blakeoppenheim/agentcore-status/master/assets/agentcore-theme.css
   
   # Text content
-  introTitle: "NVGTR System Status Dashboard"
-  introMessage: "Real-time status information for NVGTR services. View current status, response times, and incident history."
+  introTitle: "AgentCore System Status Dashboard"
+  introMessage: "Real-time status information for AgentCore services. View current status, response times, and incident history."
   
   # Navigation
   navbar:
     - title: Status
       href: /
-    - title: NVGTR
-      href: https://nvgtr.ai
+    - title: AgentCore
+      href: https://agentcore.co
 
   # Custom scripts and styles
   js: |
@@ -100,13 +100,13 @@ status-website:
 # Notifications
 notifications:
   email:
-    - support@nvgtr.ai # Replace with your email
+    - support@agentcore.co # Replace with your email
 
 # Upptime also supports notifications on Slack, Discord, and Telegram
 # For more information, see https://upptime.js.org/docs/notifications
 
 i18n:
-  footer: "Powered by NVGTR | © 2025 Navigator Holdings, LLC."
+  footer: "Powered by AgentCore | © 2025 Navigator Holdings, LLC."
   activeIncidents: "Active Incidents"
   allSystemsOperational: "All Systems Operational"
   incidentReport: "Incident Report #$NUMBER →"
