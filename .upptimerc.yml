@@ -106,7 +106,7 @@ notifications:
 # For more information, see https://upptime.js.org/docs/notifications
 
 i18n:
-  footer: "Powered by AgentCore | © 2025 Navigator Holdings, LLC."
+  footer: "Powered by AgentCore | © 2025 AgentCore LLC."
   activeIncidents: "Active Incidents"
   allSystemsOperational: "All Systems Operational"
   incidentReport: "Incident Report #$NUMBER →"
